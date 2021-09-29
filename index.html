@@ -2,21 +2,26 @@
   <head>
   
     <title>Video stream sample</title>
-	<script>
-	const VP=document.getElementById('videoPlayer');
-	const VPToggle=document.getElementById('toggleButton');
-	
-	VPToggle.addEventListener("click", function(){
-  alert("in");
-	if(VP.paused) VP.play();
-	VP.pause();
-});
-	</script>
+
   </head>
   <body>
     <video id="videoPlayer" controls muted="muted" autoplay> 
       <source src="/video" type="video/mp4">
     </video>
-	<button id="toggleButton">Play/Pause</button>
+	<input type="submit" id="toggleButton" name="buuton" value="Play/Pause">
   </body>
 </html>
+
+	<script type="text/javascript">
+	var VP=document.getElementById("videoPlayer");
+	var VPToggle=document.getElementById("toggleButton");
+	
+	if(VPToggle){
+		VPToggle.addEventListener("click", function(){
+		alert("in");
+		if(VP.pause()) VP.play();
+		VP.pause();
+		
+	});
+}
+	</script>
